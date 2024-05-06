@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>出身地</title>
+        <style type="text/css">
+            html{
+                font-size: 16px;
+                font-family: "Yu Gothic";
+            }
+            header{
+                position: fixed;
+                background-color: rgb(180, 180, 180);
+                align-items: center;
+                display: flex;
+                width: 100%;
+                box-sizing: border-box;
+                top: 0;
+                left: 0;
+            }
+            header h2{
+                color: rgb(0, 0, 0);
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                margin-left: 2rem;
+                color: white;
+            }
+            header ul{  /*ヘッダ右側の各ページのリンク*/
+                display: flex;
+                list-style-type: ">>";
+                gap: 2rem;
+                justify-content: right;
+                margin-left: auto;
+                margin-right: 2rem;
+            }
+            .top{
+                margin-top: 100px;  /*ヘッダ固定による重なり対策*/
+                font-size: 20px;
+                text-align: center;
+            }
+            .main{
+                padding: 50px;
+            }
+
+            .block{ /*メインコンテンツ要素*/
+                display: flex;
+                margin-top: 40px;
+            }
+            .block .image{ /*コンテンツ左側*/
+                flex: 2;
+                width: 400px;
+                margin: 0;
+                padding: 0;
+            }
+            .block .image img{
+                width: 100%;
+                height: auto;
+            }
+            .block .right{ /*コンテンツ右側*/
+                flex: 3;
+                margin:  0 0 0 20px;
+                padding: 0;    
+            }
+            .block .block_title{ /*コンテンツタイトル*/
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            .block .block_text{ /*コンテンツ説明*/
+                margin: 10px 0 0;
+                padding: 0;
+            }
+            .flex{ /* コンテンツ下部画像羅列*/
+                display: flex;
+                width: 300px;
+                gap: 20px;
+                margin-top: 10px;
+            }
+            .flex_img{
+                width: 100%;
+                height: auto;
+                margin: 0;
+            }
+            .copyright{ /*フッターコピーライト*/
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                text-align: center;
+                background-color: rgb(180, 180, 180);
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h2 style>佐藤史恩のホームページ</h3>
+            <ul>
+                <li><a href="index.html" class="menu">トップ</a></li>
+                <li><a href="profile.html" class=menu>プロフィール</a></li>
+                <li><a href="camp.html" class="menu">趣味</a></li>
+            </ul>
+        </header>
+            <p class="top">このページでは私の地元である福島県会津地方について説明します。</p>
+            <hr>
+        <div class="main">
+            <div class="block">
+                <figure class="image"><img src="画像/3.png"></figure>
+                    <div class="right">
+                    <p class="block_title">福島、会津について</p>
+                    <p class="block_text">福島県は東北地方の最も南に位置する東西に長い形の県で、面積は北海道、岩手に次ぎ全国3位、人口は全国21位です。東から浜通り地方、中通り地方、会津地方と縦に3地方に分類されます。<br>
+                        県中央には全国淡水湖3位の面積を持つ猪苗代湖や、日本百名山にも数えられる磐梯山があり、浜通り地方は太平洋に面しており海の幸も豊富です。<br>
+                        私の出身は3地方の中で最も自然豊かで降雪量も多い会津地方の都市部、会津若松市です。<br>
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="block">
+                <figure class="image"><img src="画像/tsurugajo-spring.jpg"></figure>
+                <div class="right">
+                    <p class="block_title">鶴ヶ城</p>
+                    <p class="block_text">会津若松市の観光地として真っ先に挙げられるのが若松城（別名：鶴ヶ城）です。<br>会津若松市街地中央に位置し、鶴ヶ城公園としてその殆どが国の史跡として指定されています。<br>
+                        幕末、戊辰戦争の激戦時に、新政府軍の砲撃によって大きな損傷を受けたましたが修復されることなく明治時代に解体されました。石垣だけの姿になっていましたが1960年に天守が復元、2011年には解体前に使用されていた赤瓦に復元され、現在の形になりました。<br>
+                        内部は若松城天守閣郷土博物館となっています（入場料有り）。雪を被った外観が美しいとSNSで話題にもなりました。「鶴ヶ城　雪」で検索。<br>
+                        ある人気アクションゲームに登場する城のモデルにもなっていると言われています。
+                    </p>
+                </div>
+            </div>
+            <div class="flex">
+                <img class="flex_img" src="画像/tsurugajo-summer.jpg">
+                <img class="flex_img" src="画像/tsurugajo-fall.jpg">
+                <img class="flex_img" src="画像/tsurugajo-winter.jpg">
+            </div>
+            <hr>
+            <div class="block">
+                <figure class="image"><img src="画像/TKLA__50A6739_TP_V4.jpg"></figure>
+                <div class="right">
+                    <p class="block_title">猪苗代湖</p>
+                    <p class="block_text">猪苗代湖は会津若松市の東に面し、およそ県の中心に位置する全国3位の面積を誇る淡水湖です。<br>
+                        湖面が澄んでおり、近くにそびえる磐梯山を映し出すことから「天鏡湖」とも呼ばれます。4年連続湖沼水質日本一だった期間もあります。<br>
+                        湖の周りには湖水浴場やキャンプ場が数多くあり、キャンプや湖水浴やウォータースポーツ、冬は白鳥の飛来地として賑わいます。<br>
+                        約9万年前の磐梯山の噴火により盆地の排水部がせき止められ、湖の形が形成され、その後付近の川の浸食により現在の水位まで達したとされています。<br>
+                        湖北側には千円札でおなじみの細菌学者、野口英世の生家が当時のまま残る「野口英世記念館」があります。
+                    </p>
+                </div>
+            </div>
+            <div class="flex">
+                <img class="flex_img" src="画像/TKLA__50A6769_TP_V.jpg">
+                <img class="flex_img" src="画像/TKLA__50A6723_TP_V4.jpg">
+                <img class="flex_img" src="画像/TKL-_50A3730_TP_V4.jpg">
+            </div>
+            <hr>
+            <div class="block">
+                <figure class="image"><img src="画像/IMG_1253.JPG"></figure>
+                <div class="right">
+                    <p class="block_title">さざえ堂</p>
+                    <p class="block_text">会津若松市街の東側に位置する飯盛山に建てられた高さ16.5mの六角三層のお堂です。<br>
+                        内部が2重螺旋のスロープ状になっており、入口、最上部、出口が1本の通路で繋がっている面白い構造をしています。<br>
+                        また、さざえ堂がある飯盛山は戊辰戦争時代、飯盛山から燃える城下町を見て負けを悟った会津藩の少年部隊「白虎隊」の自刃の地として有名です。
+                    </p><br>
+                    <p class="block_title">赤べこ</p>
+                    <p class="block_text">有名な伝統工芸品（郷土玩具）として「赤べこ」があります。胴と首が別に作られており、首を触るとゆらゆらと揺れるのが特徴です。べこ」には「牛」の意味があり赤い牛を模しています。赤は魔除け、斑点は痘（とう）を表し、疫病除けのお守りとして飾られていました。<br>
+                        赤べこをモデルとした「あかべぇ」というマスコットもおり、市内の所々で目にします。
+                    </p><br>
+                    <p class="block_title">喜多方ラーメン</p>
+                    <p class="block_text">
+                        会津若松市のすぐ北に位置する喜多方市は、あっさりした醤油ベースの「喜多方ラーメン」で有名です。<br>
+                        ラーメン店が数多く並び、行列ができている店舗も多く見られます。<br>
+                        ちなみに関東、東北を中心に展開しているラーメン店「幸楽苑」は1954年、会津若松市で創業されました。
+                    </p><br>
+                    <p class="block_title">あいづっこ宣言</p>
+                    <p class="block_text">
+                        「会津に育つすべての子どもが、このような子どもに育ってほしい」という想いから平成14年から策定された指針です。<br>
+                        会津藩氏の子供たちに聞かせる「什の掟」という厳しいルールがもとになっています。<br>
+                    </p>
+                </div>
+            </div>
+            <div class="flex">
+                <img class="flex_img" src="画像/IMG_1247.JPG">
+                <img class="flex_img" src="画像/akabeko.jpg">
+                <img class="flex_img" src="画像/akabe.jpg">
+                <img class="flex_img" src="画像/aizuwakamatsu_hp_haikei.jpg">
+            </div>
+        </div>
+        <footer>
+            <p class="copyright">&copy;sato shion</p>
+        </footer>
+    </body>
+</html>

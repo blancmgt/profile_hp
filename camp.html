@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>趣味</title>
+        <style type="text/css">
+            html{
+                font-size: 16px;
+                font-family: "Yu Gothic";
+                scroll-behavior: smooth;
+            }
+            header{
+                position: fixed;
+                background-color: rgb(180, 180, 180);
+                align-items: center;
+                display: flex;
+                width: 100%;
+                box-sizing: border-box;
+                top: 0;
+                left: 0;
+            }
+            header h2{
+                color: rgb(0, 0, 0);
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                margin-left: 2rem;
+                color: white;
+            }
+            header ul{ /*ヘッダ右側の各ページのリンク*/
+                display: flex;
+                list-style-type: ">>";
+                gap: 2rem;
+                justify-content: right;
+                margin-left: auto;
+                margin-right: 2rem;
+            }
+            header a:hover{
+                color: rgb(200, 130, 0);
+            }
+            .contents{ /*メインコンテンツ+追従サイドメニュー*/
+                display: flex;
+                align-items: flex-start;
+                width: 95%;
+                margin:  0 auto;
+            }
+            .main{ /*左側コンテンツ*/
+                flex: 1;
+                margin-right: 30px;
+                height: auto;
+            }
+            .side{ /*右側追従サイドメニュー*/
+                flex: 0 0 20%; 
+                position: sticky;
+                top: 100px;
+                height: auto;
+                background-color: rgb(215, 200, 180);
+                border: solid 2px;
+                border-radius: 4px;
+                border-color: rgb(44, 44, 44);
+            }
+            .side_menu1:hover{
+                color: rgb(0, 255, 0);
+            }
+            .side_menu2:hover{
+                color: rgb(0, 255, 0);
+            }
+            .top{
+                margin-top: 100px; /*ヘッダ固定による重なり対策*/
+                font-size: 20px;
+                text-align: center;
+            }
+            .title{ /*各タイトルバー*/
+                padding: 1rem 2rem;
+                border-left: 5px solid rgb(89, 198, 89);
+                background:  rgb(210, 210, 210);
+            }
+            hr{
+                margin-top: 50px;
+                border-width: 2px;
+            }
+            .block{ /*メインコンテンツ要素*/
+                display: flex;
+                margin-top: 50px;
+                gap: 5px
+            }
+            .block .image{ /*コンテンツ左側*/
+                flex: 2;
+                width: 400px;
+                margin: 0;
+                padding: 0;
+            }
+            .block .image img{
+                width: 100%;
+                height: auto;
+            }
+            .block .right{ /*コンテンツ右側*/
+                flex: 3;
+                margin:  0 0 0 20px;
+                padding: 0;    
+            }
+            .block .block_title{ /*コンテンツタイトル*/
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            .block .block_text{ /*コンテンツ説明*/
+                margin: 10px 0 0;
+                padding: 0;
+            }
+            .flex{ /* コンテンツ下部画像羅列*/
+                display: flex;
+                width: 30%;
+                height: auto;
+                gap: 20px;
+                margin-top: 20px;
+            }
+            .flex_img{
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+            }
+            .anc{ /*ページ内リンク用アンカー*/
+                padding-top: 100px;
+                margin-top: 100px;
+            }
+            .gallery_img{ /*ギャラリー欄*/
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 8px;
+            }
+            .gallery_img img{
+                width: 100%;
+                height: auto;
+            }
+            .button::before{ /*展開ボタン*/
+                content: "▼もっと見る";
+                font-weight: bold;
+                margin-top: 20px;
+                padding: 5px;
+            }
+            .button:hover{
+                color: orange;
+            }
+            /*ギャラリー展開*/
+            .hidden{
+                display: none;
+            }
+            input[type="checkbox"]#trigger{
+                display: none;
+            }
+            input[type="checkbox"]#trigger:checked ~ .hidden{
+                display: block;
+            }
+            input[type="checkbox"]#trigger:checked ~ .button::before{
+                content: "▲閉じる";
+            }
+            .copyright{ /*フッターコピーライト*/
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                text-align: center;
+                background-color: rgb(180, 180, 180);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2>佐藤史恩のホームページ</h2>
+            <ul>
+                <li><a href="index.html" class="menu">トップ</a></li>
+                <li><a href="profile.html" class="menu">プロフィール</a></li>
+                <li><a href="from.html" class="menu">出身</a></li>
+            </ul>
+        </header>
+            <p class="top">
+                2年ほど前に始めたキャンプについて、行ったことのあるキャンプ場の一部や使っているキャンプギアを紹介します。<br>
+                まだ経験の浅いビギナーであることを念頭にご覧いただけたら幸いです。
+            </p>
+            <div class="contents">
+                <div class="main">
+                    <h2 class="title">キャンプ場紹介<a id="camparea" class="anc"></a></h2>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_2191.JPG"></figure>
+                        <div class="right">
+                            <p class="block_title">nagano forest villege<a id="nagano" class="anc"></a></p>
+                            <p class="block_text">
+                                nagano forest villegeは長野市街地から戸隠方面に車で約30分、飯綱高原の大座法師池のほとりにあるキャンプ場です。<br>
+                                キャンプ場のほかにアスレチックコースや近年リニューアルされた「森の駅」にはカフェや農産物直売所があります。道路側のキャンプサイトは広く、森の駅も近いことからグループキャンプに向きますが、奥側はひっそりとしていてソロキャンプに向いています。<br>
+                                車の音が少し聞こえることが難点ですが、景観もよくリーズナブルな料金とアクセスの良さから、個人的に利用することが最も多いキャンプ場です。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <img class="flex_img" src="画像/IMG_2217.JPG">
+                        <img class="flex_img" src="画像/IMG_2216.JPG">
+                        <img class="flex_img" src="画像/IMG_2204.JPG">
+                    </div>
+                    <hr>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_2103.JPG"></figure>
+                        <div class="right">
+                            <p class="block_title">聖高原キャンプ場<a id="hijiri" class="anc"></a></p>
+                            <p class="block_text">
+                                聖高原キャンプ場は麻績村、聖高原にあるキャンプ場です。<br>
+                                キャンプサイトが緩やかな棚田のようになっており見晴らしが良く、芝生ではなく砂利が敷いてあるため汚れに強く虫も湧きずらい快適なサイトです。バンガローや炊事場、年季は入っていますがシャワー室等設備も充実しており、ソロでもグループでも楽しめます。スキー用のリフトは夏季でも動いており三峯山頂まで登ることができます。
+                                平日夜間は管理人が帰ってしまうようなので不安であれば休日に行きましょう。自分は完全貸し切り状態で管理人もいない夜の山奥で孤独を味わいました。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <img class="flex_img" src="画像/IMG_2098.JPG">
+                        <img class="flex_img" src="画像/IMG_2112.JPG">
+                        <img class="flex_img" src="画像/IMG_2107.JPG">
+                    </div>
+                    <hr>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_2260.JPG"></figure>
+                        <div class="right">
+                            <p class="block_title">やすらぎの森オートキャンプ場<a id="yasuragi" class="anc"></a></p>
+                            <p class="block_text">
+                                やすらぎの森オートキャンプ場は信濃町、野尻湖の北西側にあるキャンプ場です。<br>
+                                フリーサイトは広く平坦で車やバイクの乗り入れも可能なので設営場所選びに困ることはありません。騒音もなく非常に見晴らしがよく黒姫山と妙高山がはっきりときれいに眺めることができます。敷地内の森は散策路が整備されており森の中を歩くこともできます。<br>
+                                ペットを連れていくことも可能でドッグランも併設されているようでした。他にも非対面でのチェックインや、wi-Fi環境も整えてあり、マイナスポイントがほぼ見当たらないおススメのキャンプ場です。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <img class="flex_img" src="画像/IMG_2242.JPG">
+                        <img class="flex_img" src="画像/IMG_2256.JPG">
+                        <img class="flex_img" src="画像/IMG_2244.JPG">
+                    </div>
+                    <hr>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_2309.JPG"></figure>
+                        <div class="right">
+                            <p class="block_title">スタカ湖キャンプ場<a id="sutaka" class="anc"></a></p>
+                            <p class="block_text">
+                                スタカ湖キャンプ場は野沢温泉村、上ノ平高原の標高1,300mに位置する巣鷹湖の湖畔にあるキャンプ場です。
+                                湖のそばの芝生エリアと林に囲まれたエリアのフリーサイト、少し森側の車の乗り入れ可能な区画サイトの他、バンガローやレンタルテント、シャワー室等設備が充実しています。<br>
+                                また道中は景観の良い野沢温泉スキー場の合間の道を辿ってくることになるので行き帰りのドライブも楽しむことができました。温泉に入って帰るのもいいでしょう。<br>
+                                注意点としては標高が高いことによる低い気温と強い風です。特に春秋の時期は夜間の防寒防風対策は入念にしていきましょう。<br>
+                                ※2024年度は管理棟改修工事のため休業中
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <img class="flex_img" src="画像/IMG_2276.JPG">
+                        <img class="flex_img" src="画像/IMG_2297.JPG">
+                        <img class="flex_img" src="画像/IMG_2280.JPG">
+                    </div>
+                    <hr>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_3559.JPG"></figure>
+                        <div class="right">
+                            <p class="block_title">やまがたやキャンプサイト<a id="yamagata" class="anc"></a></p>
+                            <p class="block_text">
+                                福島県のおよそ中央に位置する猪苗代湖周辺にあるキャンプ場のうちの一つです。2023年に帰省ついでに利用しました。<br>
+                                砂浜のすぐ手前の松林がフリーサイトとなっており湖沿いに長く続いているため思うより広大なキャンプ場です。位置の関係で磐梯山（地元では有名な山です）は見えず、簡単な炊事場と仮設トイレ、売店兼受付の小屋があるだけのシンプルな設備です。しかし、サイト内はきれいに整備されており、日よけにもなる松林と長大なサイトのため他の利用者の気配を感じずらく、気を使わずに過ごすことができます。<br>
+                                難点をあげるとしたらサイトの後ろ側が道路になっており、猪苗代湖の周囲はバイクのツーリングによく利用されているため、その走行音がたまに聞こえてきます。とてもきれいなところですが前方から波風、後方からエンジン音と思ったより騒がしいキャンプ場でした。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <img class="flex_img" src="画像/IMG_3557.JPG">
+                        <img class="flex_img" src="画像/IMG_3558.JPG">
+                        <img class="flex_img" src="画像/IMG_3562.JPG">
+                    </div><br>
+
+                    <h2 class="title">キャンプギア紹介<a id="campgear" class="anc"></a></h2>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_4186.jpg"></figure>
+                        <figure class="image"><img src="画像/IMG_4188.jpg"></figure>
+                        <div class="right">
+                            <p class="block_title">coleman ファイアディスク<a id="firedisc" class="anc"></a></p>
+                            <p class="block_text">
+                                    coleman社の焚き火台です。円盤状で脚の開閉だけで展開が可能で、なにより手入れのしやすさが魅力です。比較的新しく購入したものですが気に入っているので今後長く使っていくつもりです。
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_4180.jpg"></figure>
+                        <figure class="image"><img src="画像/IMG_4181.jpg"></figure>
+                        <div class="right">
+                            <p class="block_title">UNIFLAME ファイアグリルsolo<a id="firegrill" class="anc"></a></p>
+                            <p class="block_text">
+                                    UNIFLAME社のソロ向けの焚き火台です。焚火をするには薪をカットする必要があることが多いですが、ソロキャンプには丁度良いサイズ感で炭や薪を使った料理をする際に活躍します。手入れも比較的楽で、コンパクトに収納できることも魅力です。
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_4171.jpg"></figure>
+                        <figure class="image"><img src="画像/IMG_4172.jpg"></figure>
+                        <div class="right">
+                            <p class="block_title">Geuog LEDランタン<a id="geoug" class="anc"></a></p>
+                            <p class="block_text">
+                                    高輝度のLEDランタンです。とある高性能LEDランタンの類似商品ですが、機能面に問題はありません。昼白色、電球色、自然光、赤色への切り替えと、それぞれ0~100%の輝度調整が可能です。自分のサイトを上から照らすように設置すれば夜間でも快適な明るさで過ごすことができます。モバイルバッテリーとしても使えます。
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_4182.jpg"></figure>
+                        <figure class="image"><img src="画像/IMG_4183.jpg"></figure>
+                        <div class="right">
+                            <p class="block_title">イワタニ タフまるJR<a id="tough" class="anc"></a></p>
+                            <p class="block_text">
+                                    基本的な構造は一般的なカセットコンロですが、通常のカセットコンロより一回り小さいソロや少人数向けの商品です。優れた防風機構や耐荷重10kgとアウトドアでの使用に向いています。専用のキャリングケースも付属しており、持ち運びや収納にも優れます。しっかりと料理するときや炭や薪を使うのが面倒な時によく使われてます。
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_4194.jpg"></figure>
+                        <div class="right">
+                            <p class="block_title">Lodge スキレット 8インチ<a id="lodge" class="anc"></a></p>
+                            <p class="block_text">
+                                    Lodge社のスキレットです。鉄製なので使用後の手入れが必須ですが熱伝導、蓄熱に優れ、数多くの調理に応用でき、キャンプを始めてから長く使っています。機能面も勿論ですが、使っているだけでなんとなく楽しいので気に入ってます。意味もなく自宅で使って手入れの面倒くささに後悔することもしばしば。
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="block">
+                        <figure class="image"><img src="画像/IMG_4177.jpg"></figure>
+                        <div class="right">
+                            <p class="block_title">FUTUREFOX OD缶遮熱テーブル<a id="syanetu" class="anc"></a></p>
+                            <p class="block_text">
+                                    長野県の企業であるFUTUREFOX社のOD缶（アウトドア用ガス缶）専用遮熱テーブルです。遮熱性のある素材のためガス缶が熱されることを防ぎ、装着することで安定感も増すため安全性に優れています。テーブル自体も熱くなることはなく簡易テーブルとして機能します。OD缶上部に装着する仕組みなのでバーナー以外にもガスランタン等のギアにも対応しています。シンプルな商品ですが地味に活躍しているギアです。
+                            </p>
+                        </div>
+                    </div><br>
+
+                    <h2 class="title">ギャラリー<a id="gallery" class="anc"></a></h2>
+                    <input type="checkbox" id="trigger">
+                    <div class="gallery_img">
+                        <a href="画像/IMG_2200.JPG" target="blank"><img src="画像/IMG_2200.JPG"></a>
+                        <a href="画像/IMG_3565.JPG" target="blank"><img src="画像/IMG_3565.JPG"></a>
+                        <a href="画像/IMG_2284.JPG" target="blank"><img src="画像/IMG_2284.JPG"></a>
+                        <a href="画像/IMG_2243.JPG" target="blank"><img src="画像/IMG_2243.JPG"></a>
+                    </div>
+                    <div class="hidden">
+                        <div class="gallery_img">
+                            <a href="画像/IMG_2248.JPG" target="blank"><img src="画像/IMG_2248.JPG"></a>
+                            <a href="画像/IMG_2693.JPG" target="blank"><img src="画像/IMG_2693.JPG"></a>
+                            <a href="画像/IMG_2714.JPG" target="blank"><img src="画像/IMG_2714.JPG"></a>
+                            <a href="画像/IMG_2208.JPG" target="blank"><img src="画像/IMG_2208.JPG"></a>
+                            <a href="画像/IMG_2209.JPG" target="blank"><img src="画像/IMG_2209.JPG"></a>
+                            <a href="画像/IMG_2287.JPG" target="blank"><img src="画像/IMG_2287.JPG"></a>
+                            <a href="画像/IMG_2288.JPG" target="blank"><img src="画像/IMG_2288.JPG"></a>
+                            <a href="画像/IMG_2218.JPG" target="blank"><img src="画像/IMG_2218.JPG"></a>
+                            <a href="画像/IMG_3572.JPG" target="blank"><img src="画像/IMG_3572.JPG"></a>
+                            <a href="画像/IMG_3566.JPG" target="blank"><img src="画像/IMG_3566.JPG"></a>
+                            <a href="画像/IMG_2283.JPG" target="blank"><img src="画像/IMG_2283.JPG"></a>
+                            <a href="画像/IMG_2240.JPG" target="blank"><img src="画像/IMG_2240.JPG"></a>
+                            <a href="画像/IMG_2305.JPG" target="blank"><img src="画像/IMG_2305.JPG"></a>
+                            <a href="画像/IMG_2113.JPG" target="blank"><img src="画像/IMG_2113.JPG"></a>
+                            <a href="画像/IMG_2291.JPG" target="blank"><img src="画像/IMG_2291.JPG"></a>
+                            <a href="画像/IMG_2712.JPG" target="blank"><img src="画像/IMG_2712.JPG"></a>
+                        </div>
+                    </div>
+                    <label class="button" for="trigger"></label>
+                </div>
+
+                <div class="side">
+                    <ul>
+                        <li class="side_menu1"><a href="#camparea">キャンプ場紹介</a></li>
+                        <ul>
+                            <li class="side_menu2"><a href="#nagano">nagano forest villege</a></li>
+                            <li class="side_menu2"><a href="#hijiri">聖高原キャンプ場</a></li>
+                            <li class="side_menu2"><a href="#sutaka">スタカ湖キャンプ場</a></li>
+                            <li class="side_menu2"><a href="#yamagata">やまがたやキャンプサイト</a></li>
+                        </ul>
+                        <li class="side_menu1"><a href="#campgear">キャンプギア紹介</a></li>
+                        <ul>
+                            <li class="side_menu2"><a href="#firedisc">coleman ファイアディスク</a></li>
+                            <li class="side_menu2"><a href="#firegrill">UNIFLAME ファイアグリルsolo</a></li>
+                            <li class="side_menu2"><a href="#geoug">Geuog LEDランタン</a></li>
+                            <li class="side_menu2"><a href="#tough">イワタニ タフまるJR</a></li>
+                            <li class="side_menu2"><a href="#lodge">Lodge スキレット 8インチ</a></li>
+                            <li class="side_menu2"><a href="#syanetu">FUTUREFOX OD缶遮熱テーブル</a></li>
+                        </ul>
+                        <li class="side_menu1"><a href="#gallery">ギャラリー</a></li>
+                    </ul>
+                </div>
+            </div>
+            <footer>
+                <p class="copyright">&copy;sato shion</p>
+            </footer>
+    </body>
+</html>

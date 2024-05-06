@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>プロフィール</title>
+        <style type="text/css">
+            html{
+                font-size: 16px;
+                font-family: "Yu Gothic";
+            }
+            header{
+                position: fixed;
+                background-color: rgb(180, 180, 180);
+                align-items: center;
+                display: flex;
+                width: 100%;
+                box-sizing: border-box;
+                top: 0;
+                left: 0;
+            }
+            header h2{
+                color: rgb(0, 0, 0);
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                margin-left: 2rem;
+                color: white;
+            }
+            header ul{  /*ヘッダ右側の各ページのリンク*/
+                display: flex;
+                list-style-type: ">>";
+                gap: 2rem;
+                justify-content: right;
+                margin-left: auto;
+                margin-right: 2rem;
+            }
+            .top{
+                margin-top: 100px; /*ヘッダ固定による重なり対策*/
+            }
+            caption{
+                font-weight: bold;
+            }
+            table{
+                margin: auto;
+                font-size: 24px;
+            }
+            th{
+                color: rgb(50, 207, 255);
+                width: 200px;
+                height: 50px;
+                vertical-align: top;
+            }
+            .copyright{ /*フッターコピーライト*/
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h2 style>佐藤史恩のホームページ</h3>
+            <ul>
+                <li><a href="index.html" class="menu">トップ</a></li>
+                <li><a href="from.html" class=menu>出身</a></li>
+                <li><a href="camp.html" class="menu">趣味</a></li>
+            </ul>
+        </header>
+        <div class="top">
+            <table>
+            <caption>プロフィール</caption>
+            <tr><th>氏名</th><td>佐藤　史恩</td></tr>
+            <tr><th>生年月日</th><td>平成５年４月２２日</td></tr>
+            <tr><th>出身</th><td>福島県会津若松市</td></tr>
+            <tr><th>現住所</th><td>長野県長野市</td></tr>
+            <tr><th rowspan="2">学歴</th><td>福島県立会津高等学校卒業</td></tr>
+            <tr><td>東京経済大学中途退学</td></tr>
+            <tr><th rowspan="2">職歴</th><td>物語コーポレーション</td></tr>
+            <tr><td>株式会社西友</td></tr>
+            <tr><th>趣味</th><td>ゲーム、漫画、アニメ、キャンプ</td></tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p class="copyright">&copy;sato shion</p>
+        </footer>
+    </body>
+</html>

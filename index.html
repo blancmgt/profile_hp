@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>トップページ</title>
+        <style type="text/css">
+            html{
+                font-size: 16px;
+                font-family: "Yu Gothic";
+            }
+            header{
+                margin: auto;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            header h1{
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                text-align: center;
+                color: rgb(100, 100, 100);
+            }
+            ul{
+                display: flex;
+                justify-content: center;
+                gap: 5px
+            }
+            li{
+                display: inline;
+            }
+            .menu img{
+                width: 220px;
+                height: 440px;
+                transition-duration: 0.5s;
+                object-fit: cover;
+            }
+            .link{
+                position: relative;
+                overflow: hidden;
+            }
+            .link .menu:hover img{
+                    transform: scale(1.2);
+                    transition-duration: 0.5s;
+            }
+            .bottom{
+                font-size: 28px;
+                font-family: メイリオ;
+                color: white;
+                position: absolute;
+                bottom: 0px;
+                right: 10px;
+            }
+            .copyright{ /*フッターコピーライト*/
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header class="header">
+            <h1>佐藤史恩のホームページ</h1>
+        </header>
+         <ul>
+            <li><div class="link"><a href="profile.html" class="menu"><img src="画像/PAK85_houkokusyokuronuri20140905_TP_V4.jpg" alt="プロフィール"><p class="bottom">プロフィール</p></a></div></li>
+            <li><div class="link"><a href="from.html" class="menu"><img src="画像/tsurugajo-summer.jpg" alt="出身"><p class="bottom">出身</p></a></div></li>
+            <li><div class="link"><a href="camp.html" class="menu"><img src="画像/IMG_2707.JPG" alt="趣味"><p class="bottom">趣味</p></a></div></li>
+        </ul>
+
+        <footer>
+            <p class="copyright">&copy;sato shion</p>
+        </footer>
+    </body>
+</html>
